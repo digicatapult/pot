@@ -957,7 +957,7 @@ _fetch_freebsd_internal()
 	_archpath="$( echo "$2" | sed -e 's:-:/:' )"
 
 	if [ ! -r "${POT_CACHE}/${_rel}"_base.txz ]; then
-		fetch -m https://ftp.freebsd.org/pub/FreeBSD/releases/"$_archpath"/"${_rel}"/base.txz -o "${POT_CACHE}/${_rel}"_base.txz
+		fetch -m https://download.cheribsd.org/releases/"$_archpath/$(echo $_rel | cut -d '-' -f 1)"/ftp/base.txz -o "${POT_CACHE}/${_rel}"_base.txz
 	fi
 
 	if [ ! -r "${POT_CACHE}/${_rel}"_base.txz ]; then
