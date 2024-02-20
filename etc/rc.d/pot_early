@@ -7,7 +7,7 @@
 
 . /etc/rc.subr
 
-PATH=$PATH:/usr/local/bin
+PATH=$PATH:/usr/local64/bin
 name="pot_early"
 desc="Pot containers - early start"
 procname="pot"
@@ -21,10 +21,10 @@ load_rc_config $name
 pot_early_start()
 {
 	local _pname _dyn_pot_list _start
-	_dyn_pot_list=$(/usr/local/bin/pot ls -q)
+	_dyn_pot_list=$(/usr/local64/bin/pot ls -q)
 	for _pname in $_dyn_pot_list ; do
-		if [ "$( /usr/local/bin/pot get-attr -p "$_pname" -A early-start-at-boot -q )" = "YES" ]; then
-			/usr/local/bin/pot start "$_pname"
+		if [ "$( /usr/local64/bin/pot get-attr -p "$_pname" -A early-start-at-boot -q )" = "YES" ]; then
+			/usr/local64/bin/pot start "$_pname"
 		fi
 	done
 }
@@ -32,10 +32,10 @@ pot_early_start()
 pot_early_stop()
 {
 	local _pname _dyn_pot_list _start
-	_dyn_pot_list=$(/usr/local/bin/pot ls -q)
+	_dyn_pot_list=$(/usr/local64/bin/pot ls -q)
 	for _pname in $_dyn_pot_list ; do
-		if [ "$( /usr/local/bin/pot get-attr -p "$_pname" -A early-start-at-boot -q )" = "YES" ]; then
-			/usr/local/bin/pot stop "$_pname"
+		if [ "$( /usr/local64/bin/pot get-attr -p "$_pname" -A early-start-at-boot -q )" = "YES" ]; then
+			/usr/local64/bin/pot stop "$_pname"
 		fi
 	done
 }
