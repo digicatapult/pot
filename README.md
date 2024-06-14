@@ -13,6 +13,16 @@ The project was presented for the first time at FOSDEM 2018: ([talk page](https:
 
 If you are more interested in jail orchestration, a nomad driver is provided to interact with `pot` and this work has been presented at FOSDEM 2020 ([talk page](https://archive.fosdem.org/2020/schedule/event/orchestrating_jails/))
 
+### Quick start
+To install for CheriBSD:
+```sh
+git clone https://github.com/digicatapult/pot
+cd $HOME/pot
+./install.sh
+pot init
+potnet config-check
+```
+
 ### Documentation
 The project's documentation is available at [https://pot.pizzamig.dev](https://pot.pizzamig.dev)
 
